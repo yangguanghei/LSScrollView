@@ -62,9 +62,11 @@
   CGFloat offsetIndex = contentOffsetX / scrollWidth;
   if (contentOffsetX > 0) {  // 左滑
     progress = offsetIndex - floor(offsetIndex);
+    NSLog(@"offsetIndex:%f---floor(offsetIndex):%f", offsetIndex, floor(offsetIndex));
     sourceIndex = (int)(contentOffsetX / scrollWidth);
     targetIndex = sourceIndex + 1;
-    if (targetIndex >= self.titles.count) {
+    if (targetIndex >= self.titles.count) { // 不能再向左滑动
+      // 最后的回弹效果
       UIView * view = self.views[self.titles.count-1];
       CGFloat width = view.frame.size.width*(1-progress*3.5);
       if (width <= miniScrollBarW) {
@@ -74,13 +76,18 @@
       self.scrollControl.frame = CGRectMake(x, self.scrollControl.frame.origin.y, width, self.scrollControl.frame.size.height);
       return;
     }
-    if (contentOffsetX - self.starOffsetX == scrollWidth) {
-      progress = 1;
+//    if (contentOffsetX - self.starOffsetX == scrollWidth) {
+//      progress = 1;
+//      targetIndex = sourceIndex;
+//    }
+    if (progress == 1) {
       targetIndex = sourceIndex;
     }
   }else{  // 右滑
     progress = 1 - (offsetIndex - floor(offsetIndex));
-    if (contentOffsetX <= 0) {
+    NSLog(@"offsetIndex:%f---floor(offsetIndex):%f", offsetIndex, floor(offsetIndex));
+    if (contentOffsetX <= 0) {  // 不能再向右滑动
+      // 最后的回弹效果
       UIView * view = self.views[0];
       CGFloat pro = -offsetIndex / 1;
       CGFloat width = view.frame.size.width - pro*view.frame.size.width * 3.5;
