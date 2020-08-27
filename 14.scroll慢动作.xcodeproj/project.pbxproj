@@ -16,6 +16,8 @@
 		1821196E24F6B7CB00E17B81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821196D24F6B7CB00E17B81 /* main.m */; };
 		1821197824F6B7CC00E17B81 /* _4_scroll___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821197724F6B7CC00E17B81 /* _4_scroll___Tests.m */; };
 		1821198324F6B7CC00E17B81 /* _4_scroll___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821198224F6B7CC00E17B81 /* _4_scroll___UITests.m */; };
+		1823B38224F76AA800699DB2 /* LSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B38124F76AA800699DB2 /* LSScrollView.m */; };
+		1823B38524F76C1500699DB2 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B38424F76C1500699DB2 /* NextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		1821197E24F6B7CC00E17B81 /* 14.scroll慢动作UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "14.scroll慢动作UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1821198224F6B7CC00E17B81 /* _4_scroll___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_4_scroll___UITests.m"; sourceTree = "<group>"; };
 		1821198424F6B7CC00E17B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1823B38024F76AA800699DB2 /* LSScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSScrollView.h; sourceTree = "<group>"; };
+		1823B38124F76AA800699DB2 /* LSScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSScrollView.m; sourceTree = "<group>"; };
+		1823B38324F76C1500699DB2 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
+		1823B38424F76C1500699DB2 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,10 @@
 				1821195F24F6B7C700E17B81 /* SceneDelegate.m */,
 				1821196124F6B7C700E17B81 /* ViewController.h */,
 				1821196224F6B7C700E17B81 /* ViewController.m */,
+				1823B38324F76C1500699DB2 /* NextViewController.h */,
+				1823B38424F76C1500699DB2 /* NextViewController.m */,
+				1823B38024F76AA800699DB2 /* LSScrollView.h */,
+				1823B38124F76AA800699DB2 /* LSScrollView.m */,
 				1821196424F6B7C700E17B81 /* Main.storyboard */,
 				1821196724F6B7CB00E17B81 /* Assets.xcassets */,
 				1821196924F6B7CB00E17B81 /* LaunchScreen.storyboard */,
@@ -267,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1823B38224F76AA800699DB2 /* LSScrollView.m in Sources */,
+				1823B38524F76C1500699DB2 /* NextViewController.m in Sources */,
 				1821196324F6B7C700E17B81 /* ViewController.m in Sources */,
 				1821195D24F6B7C700E17B81 /* AppDelegate.m in Sources */,
 				1821196E24F6B7CB00E17B81 /* main.m in Sources */,
@@ -442,6 +454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N4686HA3AU;
 				INFOPLIST_FILE = "14.scroll慢动作/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N4686HA3AU;
 				INFOPLIST_FILE = "14.scroll慢动作/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

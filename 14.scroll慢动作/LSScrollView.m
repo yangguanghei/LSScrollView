@@ -1,20 +1,17 @@
 //
-//  ViewController.m
+//  LSScrollView.m
 //  14.scroll慢动作
 //
-//  Created by apple on 2020/8/26.
+//  Created by apple on 2020/8/27.
 //  Copyright © 2020 apple. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LSScrollView.h"
 
-#import "NextViewController.h"
-
-#define num 4 // 几页
 #define scrollBarH 10 // 滚动条的高度
 #define miniScrollBarW 20 // 滚动条最小的宽度
 
-@interface ViewController ()<UIScrollViewDelegate>
+@interface LSScrollView ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView * scrollView;
 @property (nonatomic, strong) UIView * scrollControl;
@@ -22,32 +19,33 @@
 @property (nonatomic, strong) NSMutableArray * views;
 /// 是否禁止滚动协议
 @property (nonatomic, assign) BOOL isForbidScrollDelegate;
+@property (nonatomic, strong) NSArray * titles;
 
 @end
 
-@implementation ViewController
+@implementation LSScrollView
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  // Do any additional setup after loading the view.
-  self.view.backgroundColor = [UIColor greenColor];
-  [self.view addSubview:self.scrollView];
-  [self.view addSubview:self.scrollControl];
-  self.scrollControl.frame = CGRectMake(0, 50, self.scrollView.frame.size.width / num, scrollBarH);
-  for (NSInteger i = 0; i < num; i ++) {
+- (instancetype)initWithFrame:(CGRect)frame withTitles:(NSArray *)titles{
+  self = [super initWithFrame:frame];
+  if (self) {
+    self.titles = titles;
+    [self setSubviews];
+  }
+  return self;
+}
+
+- (void)setSubviews{
+  [self addSubview:self.scrollView];
+  [self addSubview:self.scrollControl];
+  self.scrollControl.frame = CGRectMake(0, 50, self.scrollView.frame.size.width / self.titles.count, scrollBarH);
+  for (NSInteger i = 0; i < self.titles.count; i ++) {
     UIView * yellowView = [UIView new];
     yellowView.backgroundColor = [UIColor yellowColor];
-    [self.view addSubview:yellowView];
+    [self addSubview:yellowView];
     yellowView.frame = CGRectMake(i * self.scrollControl.frame.size.width, 48, self.scrollControl.frame.size.width, 2);
     [self.views addObject:yellowView];
   }
 }
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-  NextViewController * nextVC = [NextViewController new];
-  [self presentViewController:nextVC animated:YES completion:nil];
-}
-
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
   self.starOffsetX = scrollView.contentOffset.x;
   self.isForbidScrollDelegate = NO;
@@ -66,8 +64,8 @@
     progress = offsetIndex - floor(offsetIndex);
     sourceIndex = (int)(contentOffsetX / scrollWidth);
     targetIndex = sourceIndex + 1;
-    if (targetIndex >= num) {
-      UIView * view = self.views[num-1];
+    if (targetIndex >= self.titles.count) {
+      UIView * view = self.views[self.titles.count-1];
       CGFloat width = view.frame.size.width*(1-progress*3.5);
       if (width <= miniScrollBarW) {
         width = miniScrollBarW;
@@ -94,8 +92,8 @@
     }
     targetIndex = (int)(contentOffsetX / scrollWidth);
     sourceIndex = targetIndex + 1;
-    if (sourceIndex >= num) {
-      sourceIndex = num - 1;
+    if (sourceIndex >= self.titles.count) {
+      sourceIndex = self.titles.count - 1;
     }
     if (progress == 1) {
       sourceIndex = targetIndex;
@@ -111,8 +109,8 @@
 
 - (UIScrollView *)scrollView{
   if (_scrollView == nil) {
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width)];
-    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * num, _scrollView.frame.size.height);
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.width)];
+    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * self.titles.count, _scrollView.frame.size.height);
     _scrollView.delegate = self;
     _scrollView.pagingEnabled = YES;
     _scrollView.backgroundColor = [UIColor redColor];
