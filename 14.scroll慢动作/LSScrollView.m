@@ -60,7 +60,7 @@
   CGFloat contentOffsetX = scrollView.contentOffset.x;
   CGFloat scrollWidth = scrollView.bounds.size.width;
   CGFloat offsetIndex = contentOffsetX / scrollWidth;
-  if (contentOffsetX > 0) {  // 左滑
+  if (contentOffsetX > self.starOffsetX) {  // 左滑
     progress = offsetIndex - floor(offsetIndex);
     NSLog(@"offsetIndex:%f---floor(offsetIndex):%f", offsetIndex, floor(offsetIndex));
     sourceIndex = (int)(contentOffsetX / scrollWidth);
