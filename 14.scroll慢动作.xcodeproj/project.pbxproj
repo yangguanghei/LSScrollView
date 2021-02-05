@@ -18,6 +18,7 @@
 		1821198324F6B7CC00E17B81 /* _4_scroll___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1821198224F6B7CC00E17B81 /* _4_scroll___UITests.m */; };
 		1823B38224F76AA800699DB2 /* LSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B38124F76AA800699DB2 /* LSScrollView.m */; };
 		1823B38524F76C1500699DB2 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1823B38424F76C1500699DB2 /* NextViewController.m */; };
+		189EE1BD25CD8FF2006B64EE /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189EE1BC25CD8FF2006B64EE /* ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		1823B38124F76AA800699DB2 /* LSScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSScrollView.m; sourceTree = "<group>"; };
 		1823B38324F76C1500699DB2 /* NextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
 		1823B38424F76C1500699DB2 /* NextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
+		189EE1BB25CD8FF2006B64EE /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		189EE1BC25CD8FF2006B64EE /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +98,9 @@
 				1821198124F6B7CC00E17B81 /* 14.scroll慢动作UITests */,
 				1821195924F6B7C700E17B81 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		1821195924F6B7C700E17B81 /* Products */ = {
 			isa = PBXGroup;
@@ -118,6 +123,8 @@
 				1821196224F6B7C700E17B81 /* ViewController.m */,
 				1823B38324F76C1500699DB2 /* NextViewController.h */,
 				1823B38424F76C1500699DB2 /* NextViewController.m */,
+				189EE1BB25CD8FF2006B64EE /* ThirdViewController.h */,
+				189EE1BC25CD8FF2006B64EE /* ThirdViewController.m */,
 				1823B38024F76AA800699DB2 /* LSScrollView.h */,
 				1823B38124F76AA800699DB2 /* LSScrollView.m */,
 				1821196424F6B7C700E17B81 /* Main.storyboard */,
@@ -283,6 +290,7 @@
 				1821195D24F6B7C700E17B81 /* AppDelegate.m in Sources */,
 				1821196E24F6B7CB00E17B81 /* main.m in Sources */,
 				1821196024F6B7C700E17B81 /* SceneDelegate.m in Sources */,
+				189EE1BD25CD8FF2006B64EE /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

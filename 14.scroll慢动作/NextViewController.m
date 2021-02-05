@@ -9,6 +9,7 @@
 #import "NextViewController.h"
 
 #import "LSScrollView.h"
+#import "ThirdViewController.h"
 
 @interface NextViewController ()
 
@@ -31,6 +32,11 @@
     _scrollView = [[LSScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width) withTitles:@[@"", @"", @"", @""]];
   }
   return _scrollView;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+	ThirdViewController * thirdVC = [ThirdViewController new];
+	[self presentViewController:thirdVC animated:YES completion:nil];
 }
 
 @end
